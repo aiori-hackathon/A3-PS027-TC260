@@ -1,0 +1,23 @@
+{
+  "name": "ipv6-readiness-auditor-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node tests/runner.js",
+    "test:benchmarks": "node scripts/run-30-benchmarks.js",
+    "test:controlled": "node scripts/validate-controlled.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "playwright": "^1.49.1",
+    "sql.js": "^1.12.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}
