@@ -60,7 +60,7 @@ export function AuditProvider({ children }) {
         isMock: res.isMock,
         message: res.isMock
           ? 'Operating in Simulated Benchmark Mode (Backend offline or Mock fallback)'
-          : 'Connected to Live FastAPI + CDP Measurement Engine'
+          : 'Connected to Live Node.js / Express Measurement Engine'
       });
     } catch {
       setBackendStatus({

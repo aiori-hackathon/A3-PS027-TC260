@@ -211,27 +211,44 @@ The frontend is fully decoupled and connects to backend REST endpoints via `src/
 - npm version 9+
 
 ### 1. Installation
-Clone or navigate to the repository directory and install all required dependencies:
+Install root frontend dependencies and backend dependencies:
 ```bash
 npm install
+cd server && npm install && cd ..
 ```
 
-### 2. Run the Development Server
+### 2. Run Both Backend and Frontend
+In terminal 1 (start Backend on port 8000 & 8001):
+```bash
+npm run server
+```
+
+In terminal 2 (start React Frontend on port 5173):
 ```bash
 npm run dev
 ```
+
 Open your browser and navigate to:
 ```
 http://localhost:5173/
 ```
+The frontend top header will illuminate **"Backend Online"** and load live data from the SQLite database.
 
-### 3. Production Build & Preview
-To verify production bundle build:
+### 3. Run Automated Tests & Benchmarks
+```bash
+# Run backend test suite (URL validation, SSRF, DNS probes, SQLite DAO)
+npm run server:test
+
+# Run the 30-site benchmark campaign
+cd server && npm run test:benchmarks
+
+# Run the 6 seeded faults validation suite
+cd server && npm run test:controlled
+```
+
+### 4. Production Build
 ```bash
 npm run build
-```
-To preview the production bundle locally:
-```bash
 npm run preview
 ```
 
